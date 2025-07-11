@@ -12,9 +12,9 @@ This project is useful for:
 -	Online education platforms
 -	Administrative personnel managing course enrollment and faculty
 ## 🛠️ Technologies Used:
-Programming Language	 Python 3.x
-GUI Library	           Tkinter
-Database	             MySQL (via PyMySQL)
+- Programming Language	 Python 3.x
+- GUI Library	           Tkinter
+- Database	             MySQL (via PyMySQL)
 ## 📂 Modules Overview:
 ### 1. Admin Registration
 -	First-time registration of an admin user.
@@ -32,14 +32,14 @@ Database	             MySQL (via PyMySQL)
   - Mentor Display
   - Courses Display
 ### 4. Student Registration
-#### •	Allows admin to register new students.
+#### 	Allows admin to register new students.
 - **Includes:**
 - Auto age calculator based on DOB  
 - Input validations for phone number and email  
 - Dropdowns for state and gender selection
 ### 5. Mentor Registration
-#### •	A dedicated form to register mentors.
-- **	Inputs include**:
+#### 	A dedicated form to register mentors.
+- **Inputs include**:
 -	Mentor name, contact, email
 -	Qualification and experience
 -	Assigned course and mode (Online/Offline)
