@@ -25,34 +25,34 @@ Database	             MySQL (via PyMySQL)
 •	Invalid login attempts are handled gracefully.
 •	Show/Hide password feature is provided.
 ### 3. Homepage
-#### •	Dashboard with buttons to navigate to:
-o	Student Registration
-o	Mentor Registration
-o	Add Courses
-o	Mentor Display
-o	Courses Display
+- **Dashboard with buttons to navigate to:**
+  - Student Registration
+  - Mentor Registration
+  - Add Courses
+  - Mentor Display
+  - Courses Display
 ### 4. Student Registration
 #### •	Allows admin to register new students.
-#### •	Includes:
-o	Auto age calculator based on DOB
-o	Input validations for phone number and email
-o	Dropdowns for state and gender selection
+- **Includes:**
+- Auto age calculator based on DOB  
+- Input validations for phone number and email  
+- Dropdowns for state and gender selection
 ### 5. Mentor Registration
 #### •	A dedicated form to register mentors.
-#### •	Inputs include:
-o	Mentor name, contact, email
-o	Qualification and experience
-o	Assigned course and mode (Online/Offline)
+- **•	Inputs include**:
+-	Mentor name, contact, email
+-	Qualification and experience
+-	Assigned course and mode (Online/Offline)
 ### 6. Add Course
 #### •	Admin can add new courses into the system.
-#### •	Fields include:
-o	Course name, fee, duration
-o	Time slot, mentor name, and mode of delivery
+- **Fields include:**
+-	Course name, fee, duration
+-	Time slot, mentor name, and mode of delivery
 ## 🚀 How to Run:
 1.	Start with registration.py to register the admin.
 2.	Then run login.py to log into the system.
 3.	After login, homepage.py provides access to other features.
 4.	Use respective buttons to open:
-o	Student Registration
-o	Mentor Registration
-o	Course Management
+-	Student Registration
+-	Mentor Registration
+-	Course Management
