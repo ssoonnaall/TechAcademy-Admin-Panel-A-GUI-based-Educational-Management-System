@@ -56,3 +56,6 @@ This project is useful for:
 -	Student Registration
 -	Mentor Registration
 -	Course Management
+## 💬 Suggestions & Contributions:
+If you have any suggestions or improvements, feel free to open an issue or pull request. Your feedback is highly appreciated!
+
