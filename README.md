@@ -39,7 +39,7 @@ Database	             MySQL (via PyMySQL)
 - Dropdowns for state and gender selection
 ### 5. Mentor Registration
 #### •	A dedicated form to register mentors.
-- **•	Inputs include**:
+- **	Inputs include**:
 -	Mentor name, contact, email
 -	Qualification and experience
 -	Assigned course and mode (Online/Offline)
