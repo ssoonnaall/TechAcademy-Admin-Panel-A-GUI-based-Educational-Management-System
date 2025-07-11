@@ -44,7 +44,7 @@ This project is useful for:
 -	Qualification and experience
 -	Assigned course and mode (Online/Offline)
 ### 6. Add Course
-#### •	Admin can add new courses into the system.
+#### 	Admin can add new courses into the system.
 - **Fields include:**
 -	Course name, fee, duration
 -	Time slot, mentor name, and mode of delivery
