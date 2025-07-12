@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 import datetime
 from tkinter import messagebox
 import pymysql as sql
+from config import DB_PASSWORD
 
 top = Tk()
 top.title('Admin Registration')
@@ -68,7 +69,7 @@ def insert():
         messagebox.showerror("Invalid Email", "Enter a valid email address.")
         return
 
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     query = "INSERT INTO reg_schema VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
     values = (firstname, lastname, contact, age, email,password, gender, state)
@@ -97,7 +98,7 @@ def update():
         messagebox.showwarning("Missing Info", "Please fill out all fields.")
         return
 
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     query = """UPDATE reg_schema SET  firstname=%s ,lastname=%s, contact=%s, age=%s, password=%s, gender=%s, state=%s WHERE email=%s """
     values = (firstname,lastname, contact, age, password, gender, state,email )
