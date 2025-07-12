@@ -6,6 +6,8 @@ import datetime
 import pymysql as sql
 import subprocess
 import sys
+from config import DB_PASSWORD
+
 
 top = Tk()
 top.title('Mentor Registration')
@@ -55,7 +57,7 @@ def insert():
         messagebox.showwarning("Incomplete", "Please fill all the fields correctly.")
         return
 
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     query = "INSERT INTO Mentors(Firstname, Lastname, Contact, Age, Email, Qualification, Gender, Subject, Experience) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     values = (k1, k2, k3, k4, email, qualification, gender, subject, experience)
@@ -87,7 +89,7 @@ def update_mentor():
 
     values = ( e1.get(), e2.get(), e3.get(), e4.get(),e_email.get(), c2.get(), gender_var.get(), c3.get(), c4.get(), mentor_id )
 
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     query = "UPDATE Mentors SET Firstname=%s, Lastname=%s, Contact=%s, Age=%s, Email=%s, Qualification=%s, Gender=%s, Subject=%s, Experience=%s WHERE MentorID=%s"
     result = cur.execute(query, values)

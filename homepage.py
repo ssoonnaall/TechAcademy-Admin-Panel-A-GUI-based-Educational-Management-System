@@ -3,6 +3,8 @@ from tkinter import messagebox
 from PIL import Image, ImageTk
 from tkinter import ttk
 import pymysql as sql
+from config import DB_PASSWORD
+
 
 top = Tk()
 top.title('Home Page')
@@ -58,7 +60,7 @@ def show_mentor():
     tv.place(x=50, y=250)
     for i in tv.get_children():
         tv.delete(i)
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     cur.execute("SELECT MentorID,Firstname, Lastname, Contact, Age, Email, Qualification,Subject,Experience,Gender FROM mentors")
     result = cur.fetchall()
@@ -79,7 +81,7 @@ def Search():
     s7 = e6.get()
     for i in tv.get_children():
         tv.delete(i)
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     s = "select * from mentors where Firstname=%s"
     cur.execute(s, s7)
@@ -100,7 +102,7 @@ def Search2():
     s7=e6.get()
     for i in tv.get_children():
         tv.delete(i)
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     s="select * from courses where Course_name=%s"
     cur.execute(s,s7)
@@ -137,7 +139,7 @@ def show_courses():
     tv.place(x=50, y=250)
 
 
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     cur.execute("SELECT Course_name, Course_fee, Duration, Mentor, Time_slot, Course_mode FROM courses")
     result = cur.fetchall()

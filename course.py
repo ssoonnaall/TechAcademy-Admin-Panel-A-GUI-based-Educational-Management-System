@@ -4,6 +4,8 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 import subprocess
 import sys
+from config import DB_PASSWORD
+
 
 def insert_course():
     name = e1.get()
@@ -18,7 +20,7 @@ def insert_course():
         return
 
     import pymysql as sql
-    db = sql.connect(host="localhost", user="root", password="Rama@1234", db="project")
+    db = sql.connect(host="localhost", user="root", password="DB_PASSWORD", db="project")
     cur = db.cursor()
     cur.execute("INSERT INTO courses VALUES (%s, %s, %s, %s, %s, %s)", (name, fee, duration, instructor, slot, mode))
     db.commit()

@@ -7,6 +7,8 @@ import datetime
 import pymysql as sql
 import subprocess
 import sys
+from config import DB_PASSWORD
+
 
 
 top = Tk()
@@ -47,7 +49,7 @@ def search():
     Firstname = e1.get()
     for i in tv.get_children():
         tv.delete(i)
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     cur.execute("SELECT * FROM students WHERE Firstname = %s", (Firstname,))
     result = cur.fetchall()
@@ -74,7 +76,7 @@ def insert():
         messagebox.showerror("Error", "Please fill all fields")
         return
     import pymysql as sql
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     query = "INSERT INTO students VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
     values = (stid,k1, k2, int(k3), int(k4), reg_date, k6, k7, k8, k9)
@@ -104,7 +106,7 @@ def update():
         messagebox.showwarning("Missing Info", "Please fill out all fields.")
         return
 
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     query = """UPDATE students SET Firstname=%s,Lastname=%s, Contact=%s, Age=%s, Reg_date=%s, Qualification=%s, Gender=%s, Course=%s, state=%s WHERE StudentID=%s"""
     values = (Firstname,Lastname, Contact, Age, RegDate, Qualification, Gender, Course, State, stid)
@@ -127,18 +129,18 @@ def delete_student():
     record = tv.item(selected)['values']
     stid = record[0]  # student id is unique
 
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
-    cur.execute("DELETE FROM students WHERE Firstname=%s", (fname,))
+    cur.execute("DELETE FROM students WHERE Firstname=%s", (stid,))
     db.commit()
 
-    messagebox.showinfo("Deleted", f"Student '{fname}' deleted.")
+    messagebox.showinfo("Deleted", f"Student '{stid}' deleted.")
     show_students()
 
 def show_students():
     for i in tv.get_children():
         tv.delete(i)
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     cur.execute("SELECT * FROM students")
     data = cur.fetchall()

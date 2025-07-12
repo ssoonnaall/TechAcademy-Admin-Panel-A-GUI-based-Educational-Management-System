@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import pymysql as sql
+from config import DB_PASSWORD
+
 
 top = Tk()
 top.title('Admin Login')
@@ -23,7 +25,7 @@ def show():
 
 # Login Function
 def Login():
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     cur.execute("SELECT * FROM reg_schema WHERE email=%s AND  password=%s", (e1.get(), e2.get()))
     row = cur.fetchone()
