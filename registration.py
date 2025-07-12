@@ -113,7 +113,7 @@ def update():
 
 def delete():
     firstname = e1.get()
-    db = sql.connect(host='localhost', user='root', password='Rama@1234', db='project')
+    db = sql.connect(host='localhost', user='root', password='DB_PASSWORD', db='project')
     cur = db.cursor()
     result = cur.execute("DELETE FROM reg_schema WHERE firstname=%s", (firstname,))
     db.commit()
